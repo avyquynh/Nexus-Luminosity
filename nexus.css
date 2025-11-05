@@ -1,20 +1,10 @@
 body {
     background-color: black;
     color: white;
-    font-family: "Lucida Console", "Monaco", "Courier New", monospace;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-h1 {
-    font-size: 50px;
-    font-weight: bolder;
-    padding: 1%;
-}
-hr {
-    margin-bottom: 10%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 nav {
-    padding: 2% 0% 2% 2%;
+    padding: 2% 50px 2% 50px;
     display: flex;
     justify-content: right;
     font-size: 25px;
@@ -33,9 +23,9 @@ nav li:last-child{
 }
 nav a{
     text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%s;
+    text-transform: uppercase;
+    font-family: "Monaco", "Lucida Console", "Courier New", monospace;
+    display: inline-block;
 }
 nav a:link{
     color: #ffffff;
@@ -43,20 +33,89 @@ nav a:link{
 nav a:hover{
     color: #747474;
 }
+main {
+    padding: 0 50px 5% 50px;
+}
+h1 {
+    font-size: 50px;
+    padding: 0% 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+section {
+    width: 25%;
+    padding-top: 2%;
+}
+footer {
+    text-align: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5%;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 75%;
+    padding: 0% 5% 0% 5%;
+    align-content: center;
+}
+footer a:link{
+    color: #000000;
+}
+footer a:hover{
+    color: #747474;
+}
+#logo {
+    width: 100px;
+    height: 100px;
+    padding-top: 10px;
+}
 .no-bullets{
     list-style-type: none;
 }
+.brief {
+    display: grid;
+    grid-template-columns: 2fr .8fr;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+.img-size {
+    max-width: 100%;
+    height: auto;
+}
+.flow {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+.flow section {
+    flex: 1;
+}
 @media screen and (min-width: 300px) {
+    nav {
+        padding: 2% 50px 2% 50px;
+        display: flex;
+        justify-content: right;
+        font-size: 25px;
+    }
     @supports (display: grid){
         nav ul {
-            padding: 0;
             flex-direction: column;
-            padding-top: 1em;
             align-items: right;
+            direction: rtl;
         }
         nav li {
-            list-style-type: none;
-            padding: 0;
+            padding-right: 0;
+            text-align: right;
+        }
+        nav a {
+            direction: ltr;
         }
         header {
             grid-area: header;
@@ -78,11 +137,11 @@ nav a:hover{
         flex-wrap: nowrap;
         justify-content: space-around;
         flex-direction: row;
+        direction: ltr;
     }
     nav li {
         list-style-type: disc;
         padding-right: 50px;
         text-align: right;
-        
     }
 }
